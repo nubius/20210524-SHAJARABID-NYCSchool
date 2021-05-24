@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JnC-V2-3Sf">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--School List View Controller-->
+        <scene sceneID="oTI-aA-pyL">
+            <objects>
+                <viewController id="JnC-V2-3Sf" customClass="SchoolListViewController" customModule="NYC_Schools_Challenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dib-R8-2rl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="v5W-9y-5Ti" userLabel="School List Table View">
+                                <rect key="frame" x="0.0" y="141" width="414" height="755"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="schoolCell" textLabel="y2R-sg-I0v" detailTextLabel="Yzn-eL-zYl" rowHeight="60" style="IBUITableViewCellStyleSubtitle" id="MSn-y8-QrU">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MSn-y8-QrU" id="aBQ-Ev-o5a">
+                                            <rect key="frame" x="0.0" y="0.0" width="376" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="School Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="y2R-sg-I0v" userLabel="School Name">
+                                                    <rect key="frame" x="20" y="13.5" width="91.5" height="18"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="School Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Yzn-eL-zYl" userLabel="School Address">
+                                                    <rect key="frame" x="20" y="34" width="69" height="11"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
+                                        <connections>
+                                            <segue destination="HaA-xL-q50" kind="showDetail" identifier="toSchoolSAT" id="T9N-cs-1PP"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="JnC-V2-3Sf" id="4kV-LI-xoy"/>
+                                    <outlet property="delegate" destination="JnC-V2-3Sf" id="XPY-si-usD"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dv3-fg-Uth" userLabel="Header View">
+                                <rect key="frame" x="0.0" y="52" width="414" height="81"/>
+                                <subviews>
+                                    <searchBar contentMode="redraw" barStyle="black" searchBarStyle="minimal" placeholder="Search School or Address" translatesAutoresizingMaskIntoConstraints="NO" id="r8w-h0-GyM">
+                                        <rect key="frame" x="0.0" y="25" width="414" height="56"/>
+                                        <color key="backgroundColor" red="0.29469081289999999" green="0.2998545695" blue="0.44918766580000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="JnC-V2-3Sf" id="4pZ-oo-sSE"/>
+                                        </connections>
+                                    </searchBar>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New York City Schools" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ITC-mO-q5U" userLabel="Controller Title Label">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="30.5"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.29469081289999999" green="0.2998545695" blue="0.44918766580000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="r8w-h0-GyM" secondAttribute="bottom" id="LUF-Ex-0Pj"/>
+                                    <constraint firstAttribute="trailing" secondItem="r8w-h0-GyM" secondAttribute="trailing" id="QNW-6G-lXh"/>
+                                    <constraint firstAttribute="trailing" secondItem="ITC-mO-q5U" secondAttribute="trailing" id="Rpe-0f-7Rz"/>
+                                    <constraint firstItem="ITC-mO-q5U" firstAttribute="leading" secondItem="dv3-fg-Uth" secondAttribute="leading" id="SGl-GX-GZ9"/>
+                                    <constraint firstAttribute="height" constant="81" id="X51-kR-zL7"/>
+                                    <constraint firstItem="r8w-h0-GyM" firstAttribute="leading" secondItem="dv3-fg-Uth" secondAttribute="leading" id="iAc-Ja-e4r"/>
+                                    <constraint firstItem="ITC-mO-q5U" firstAttribute="top" secondItem="dv3-fg-Uth" secondAttribute="top" id="yjF-Jj-V43"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.29469081289999999" green="0.2998545695" blue="0.44918766580000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="dv3-fg-Uth" firstAttribute="top" secondItem="zy8-V7-Ips" secondAttribute="top" constant="8" id="1OI-jG-Y4F"/>
+                            <constraint firstItem="v5W-9y-5Ti" firstAttribute="leading" secondItem="zy8-V7-Ips" secondAttribute="leading" id="5Ha-RY-XHS"/>
+                            <constraint firstItem="dv3-fg-Uth" firstAttribute="trailing" secondItem="zy8-V7-Ips" secondAttribute="trailing" id="C8D-sf-Au3"/>
+                            <constraint firstItem="v5W-9y-5Ti" firstAttribute="trailing" secondItem="zy8-V7-Ips" secondAttribute="trailing" id="EYR-fo-AAI"/>
+                            <constraint firstItem="v5W-9y-5Ti" firstAttribute="bottom" secondItem="dib-R8-2rl" secondAttribute="bottom" id="XIP-7b-8X7"/>
+                            <constraint firstItem="v5W-9y-5Ti" firstAttribute="top" secondItem="dv3-fg-Uth" secondAttribute="bottom" constant="8" id="nzu-fg-ImE"/>
+                            <constraint firstItem="dv3-fg-Uth" firstAttribute="leading" secondItem="zy8-V7-Ips" secondAttribute="leading" id="q7K-zg-z3C"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zy8-V7-Ips"/>
+                    </view>
+                    <connections>
+                        <outlet property="schoolListTableView" destination="v5W-9y-5Ti" id="Fhb-ev-KKd"/>
+                        <outlet property="searchBar" destination="r8w-h0-GyM" id="Y9H-fv-C5P"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s9Y-ta-egv" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-98" y="165"/>
+        </scene>
+        <!--SchoolSAT View Controller-->
+        <scene sceneID="J2J-hB-TEd">
+            <objects>
+                <viewController id="HaA-xL-q50" customClass="SchoolSATViewController" customModule="NYC_Schools_Challenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1eD-bJ-iVr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JyI-HT-Nc1" userLabel="Header View">
+                                <rect key="frame" x="0.0" y="44" width="414" height="110"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SCHOOL_NAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JvG-xb-nJ9" userLabel="Controller School Title Label">
+                                        <rect key="frame" x="8" y="48" width="398" height="31"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Average SAT Scores" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1x-LI-rVU" userLabel="Controller View Title Label">
+                                        <rect key="frame" x="0.0" y="82" width="414" height="31"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6kO-yy-MCE" userLabel="Back Button">
+                                        <rect key="frame" x="21" y="0.0" width="48" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="bj3-af-mZQ"/>
+                                            <constraint firstAttribute="height" constant="40" id="lG8-9H-mlX"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="22"/>
+                                        <state key="normal" title="Back">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="JnC-V2-3Sf" kind="showDetail" identifier="toSchoolList" id="kBj-GM-GxF"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.29469081289999999" green="0.2998545695" blue="0.44918766580000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="JvG-xb-nJ9" firstAttribute="top" secondItem="6kO-yy-MCE" secondAttribute="bottom" constant="8" id="Byh-JR-ZM3"/>
+                                    <constraint firstItem="k1x-LI-rVU" firstAttribute="leading" secondItem="JyI-HT-Nc1" secondAttribute="leading" id="J2a-99-KRL"/>
+                                    <constraint firstItem="JvG-xb-nJ9" firstAttribute="leading" secondItem="JyI-HT-Nc1" secondAttribute="leading" constant="8" id="Uec-RF-jtx"/>
+                                    <constraint firstItem="6kO-yy-MCE" firstAttribute="leading" secondItem="JyI-HT-Nc1" secondAttribute="leading" constant="21" id="WS9-Qg-Fc3"/>
+                                    <constraint firstAttribute="trailing" secondItem="JvG-xb-nJ9" secondAttribute="trailing" constant="8" id="XZj-F9-Zou"/>
+                                    <constraint firstItem="k1x-LI-rVU" firstAttribute="top" secondItem="JvG-xb-nJ9" secondAttribute="bottom" constant="3" id="YH5-y0-o2R"/>
+                                    <constraint firstItem="6kO-yy-MCE" firstAttribute="top" secondItem="JyI-HT-Nc1" secondAttribute="top" id="l6q-9r-ft6"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6kO-yy-MCE" secondAttribute="trailing" constant="20" symbolic="YES" id="lJl-sC-C48"/>
+                                    <constraint firstAttribute="height" constant="110" id="nkC-Ky-7r6"/>
+                                    <constraint firstAttribute="trailing" secondItem="k1x-LI-rVU" secondAttribute="trailing" id="sEv-Cb-dmr"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Math" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MSd-t5-afz" userLabel="Math Label">
+                                <rect key="frame" x="40" y="546" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="R94-0z-vuz"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="X2h-zG-qJD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="apn-NH-YO7" userLabel="Average SAT Math Score View">
+                                <rect key="frame" x="40" y="438" width="100" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ppS-nd-uym" userLabel="Average SAT Math Score Label">
+                                        <rect key="frame" x="8" y="8" width="84" height="84"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="84" id="AB8-kZ-BT0"/>
+                                            <constraint firstAttribute="height" constant="84" id="kHu-fl-sXh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.50042481760000002" green="0.158716618" blue="0.12547696" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="ppS-nd-uym" firstAttribute="top" secondItem="apn-NH-YO7" secondAttribute="top" constant="8" id="8So-aN-ykH"/>
+                                    <constraint firstAttribute="width" constant="100" id="Dxg-j9-TpE"/>
+                                    <constraint firstItem="ppS-nd-uym" firstAttribute="leading" secondItem="apn-NH-YO7" secondAttribute="leading" constant="8" id="Ggt-ae-NoZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="ppS-nd-uym" secondAttribute="trailing" constant="8" id="Jzs-Zh-Zil"/>
+                                    <constraint firstAttribute="height" constant="100" id="eJe-qh-FFa"/>
+                                    <constraint firstAttribute="bottom" secondItem="ppS-nd-uym" secondAttribute="bottom" constant="8" id="ekQ-Xj-Seg"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Writing" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FTp-IT-iOt" userLabel="Writing Label">
+                                <rect key="frame" x="273" y="546" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="VDj-ZC-c0p"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="u35-8r-Ss8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2E9-NT-9pL" userLabel="Average SAT Writing Score View">
+                                <rect key="frame" x="273" y="438" width="100" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Uh-oV-Gvo" userLabel="Average SAT Writing Score Label">
+                                        <rect key="frame" x="8" y="8" width="84" height="84"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="84" id="6RC-Js-vG8"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="84" id="qWX-eW-uDd"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.1013322658" green="0.19627809330000001" blue="0.50556407489999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="KfY-ox-tHB"/>
+                                    <constraint firstItem="9Uh-oV-Gvo" firstAttribute="leading" secondItem="2E9-NT-9pL" secondAttribute="leading" constant="8" id="Qjz-57-SjT"/>
+                                    <constraint firstAttribute="height" constant="100" id="VNw-bv-rUm"/>
+                                    <constraint firstAttribute="bottom" secondItem="9Uh-oV-Gvo" secondAttribute="bottom" constant="8" id="bGn-Zj-dwX"/>
+                                    <constraint firstItem="9Uh-oV-Gvo" firstAttribute="top" secondItem="2E9-NT-9pL" secondAttribute="top" constant="8" id="ku6-0l-Tnv"/>
+                                    <constraint firstAttribute="trailing" secondItem="9Uh-oV-Gvo" secondAttribute="trailing" constant="8" id="plT-xj-7kz"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reading" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TYv-XG-G2U" userLabel="Reading Label">
+                                <rect key="frame" x="157" y="382" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="3ns-qb-gik"/>
+                                    <constraint firstAttribute="height" constant="30" id="gWI-Wd-JeQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3wo-gD-i20" userLabel="Average SAT Reading Score View">
+                                <rect key="frame" x="157" y="274" width="100" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnt-t0-dlt" userLabel="Average SAT Reading Score Label">
+                                        <rect key="frame" x="8" y="8" width="84" height="84"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="84" id="My4-I9-ySe"/>
+                                            <constraint firstAttribute="height" constant="84" id="u4Q-f9-WZ4"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.16046216899999999" green="0.5" blue="0.1126387715" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="0pB-fU-1dS"/>
+                                    <constraint firstAttribute="bottom" secondItem="hnt-t0-dlt" secondAttribute="bottom" constant="8" id="Grg-7q-DHn"/>
+                                    <constraint firstItem="hnt-t0-dlt" firstAttribute="top" secondItem="3wo-gD-i20" secondAttribute="top" constant="8" id="Ohz-gl-lAm"/>
+                                    <constraint firstAttribute="width" constant="100" id="QjI-GX-djT"/>
+                                    <constraint firstAttribute="trailing" secondItem="hnt-t0-dlt" secondAttribute="trailing" constant="8" id="hxU-W7-xjx"/>
+                                    <constraint firstItem="hnt-t0-dlt" firstAttribute="leading" secondItem="3wo-gD-i20" secondAttribute="leading" constant="8" id="ljt-zQ-vZQ"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.29469081289999999" green="0.2998545695" blue="0.44918766580000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="JyI-HT-Nc1" firstAttribute="leading" secondItem="Our-2m-Pqf" secondAttribute="leading" id="7dz-HM-Jip"/>
+                            <constraint firstItem="3wo-gD-i20" firstAttribute="centerX" secondItem="1eD-bJ-iVr" secondAttribute="centerX" id="KRL-6h-01K"/>
+                            <constraint firstItem="Our-2m-Pqf" firstAttribute="trailing" secondItem="2E9-NT-9pL" secondAttribute="trailing" constant="41" id="LsI-5y-jtZ"/>
+                            <constraint firstItem="JyI-HT-Nc1" firstAttribute="top" secondItem="Our-2m-Pqf" secondAttribute="top" id="OGz-He-2Jk"/>
+                            <constraint firstItem="FTp-IT-iOt" firstAttribute="top" secondItem="2E9-NT-9pL" secondAttribute="bottom" constant="8" id="PqN-QH-yTI"/>
+                            <constraint firstItem="2E9-NT-9pL" firstAttribute="top" secondItem="JyI-HT-Nc1" secondAttribute="bottom" constant="284" id="Rk5-wr-Ydf"/>
+                            <constraint firstItem="MSd-t5-afz" firstAttribute="top" secondItem="apn-NH-YO7" secondAttribute="bottom" constant="8" id="SPT-Af-0XC"/>
+                            <constraint firstItem="Our-2m-Pqf" firstAttribute="trailing" secondItem="FTp-IT-iOt" secondAttribute="trailing" constant="41" id="Um4-L4-SMu"/>
+                            <constraint firstItem="apn-NH-YO7" firstAttribute="leading" secondItem="Our-2m-Pqf" secondAttribute="leading" constant="40" id="Wo8-MK-ORS"/>
+                            <constraint firstItem="MSd-t5-afz" firstAttribute="top" secondItem="apn-NH-YO7" secondAttribute="bottom" constant="8" id="XsA-xW-Jcp"/>
+                            <constraint firstItem="FTp-IT-iOt" firstAttribute="top" secondItem="2E9-NT-9pL" secondAttribute="bottom" constant="8" id="YV6-2x-XJ8"/>
+                            <constraint firstItem="TYv-XG-G2U" firstAttribute="top" secondItem="3wo-gD-i20" secondAttribute="bottom" constant="8" id="aZX-Nq-TvJ"/>
+                            <constraint firstItem="MSd-t5-afz" firstAttribute="leading" secondItem="Our-2m-Pqf" secondAttribute="leading" constant="40" id="fpE-PN-tR8"/>
+                            <constraint firstItem="3wo-gD-i20" firstAttribute="top" secondItem="JyI-HT-Nc1" secondAttribute="bottom" constant="120" id="gO2-9Z-Bv7"/>
+                            <constraint firstItem="TYv-XG-G2U" firstAttribute="centerX" secondItem="1eD-bJ-iVr" secondAttribute="centerX" id="lit-w0-qnf"/>
+                            <constraint firstItem="FTp-IT-iOt" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="MSd-t5-afz" secondAttribute="trailing" constant="8" symbolic="YES" id="npU-lQ-H6i"/>
+                            <constraint firstItem="JyI-HT-Nc1" firstAttribute="trailing" secondItem="Our-2m-Pqf" secondAttribute="trailing" id="vNV-pK-RIw"/>
+                            <constraint firstItem="apn-NH-YO7" firstAttribute="top" secondItem="JyI-HT-Nc1" secondAttribute="bottom" constant="284" id="xuH-59-g4d"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Our-2m-Pqf"/>
+                    </view>
+                    <connections>
+                        <outlet property="AverageSATMathScoreLabel" destination="ppS-nd-uym" id="lbf-mo-hWB"/>
+                        <outlet property="AverageSATReadingScoreLabel" destination="hnt-t0-dlt" id="Q5W-cW-emt"/>
+                        <outlet property="AverageSATWritingScoreLabel" destination="9Uh-oV-Gvo" id="cEB-RB-06J"/>
+                        <outlet property="ControllerTitleLabel" destination="JvG-xb-nJ9" id="NyL-bQ-8S8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zPE-gb-M9n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="817" y="164"/>
+        </scene>
+    </scenes>
+</document>

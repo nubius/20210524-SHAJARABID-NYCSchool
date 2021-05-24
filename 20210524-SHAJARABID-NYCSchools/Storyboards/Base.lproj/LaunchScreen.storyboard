@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nfg-Va-dR9" userLabel="Controller View Title Label">
+                                <rect key="frame" x="35.5" y="109" width="343" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="N3I-4h-zk6"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="343" id="jnc-LU-STw"/>
+                                </constraints>
+                                <string key="text">New York City School
+Average SAT Scores</string>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="school_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="ig5-0n-bJr" userLabel="Logo Image">
+                                <rect key="frame" x="0.0" y="297" width="414" height="230"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="GOB-B4-yhu"/>
+                                    <constraint firstAttribute="height" constant="230" id="jMX-rk-qmn"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.29469081289999999" green="0.2998545695" blue="0.44918766580000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="Nfg-Va-dR9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="65" id="War-Sy-37C"/>
+                            <constraint firstItem="ig5-0n-bJr" firstAttribute="top" secondItem="Nfg-Va-dR9" secondAttribute="bottom" constant="8" id="Xr1-eC-qh7"/>
+                            <constraint firstItem="ig5-0n-bJr" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="cTT-Go-OKW"/>
+                            <constraint firstItem="Nfg-Va-dR9" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="r81-aA-bLK"/>
+                            <constraint firstItem="ig5-0n-bJr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xrn-sD-XMr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="school_icon.png" width="820" height="764"/>
+    </resources>
+</document>
